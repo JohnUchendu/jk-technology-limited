@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Twitter, Linkedin, Facebook } from "lucide-react";
+import Image from "next/image";
+import { Instagram } from "lucide-react";
 
 export default function Footer() {
   const navLinks = [
@@ -10,12 +11,6 @@ export default function Footer() {
     { href: "#services", label: "What We Do" },
     { href: "#clients", label: "Clients" },
     { href: "#contact", label: "Contact" },
-  ];
-
-  const socialLinks = [
-    { href: "https://twitter.com/jktechlimited", icon: Twitter, label: "Twitter" },
-    { href: "https://linkedin.com/company/jktechlimited", icon: Linkedin, label: "LinkedIn" },
-    { href: "https://facebook.com/jktechlimited", icon: Facebook, label: "Facebook" },
   ];
 
   return (
@@ -36,15 +31,15 @@ export default function Footer() {
             &copy; 2025 JK TECHNOLOGY LIMITED. All Rights Reserved.
           </p>
           <p className="text-base sm:text-lg mt-2">
-            Powered by <span className="text-blue-400 font-semibold">
-             
+            Powered by{" "}
+            <span className="text-blue-400 font-semibold">
               <Link
-                      href="https://www.ibiz.name.ng"
-                      className="text-base sm:text-lg hover:text-blue-600 transition-colors duration-300"
-                    > iBiz Business Suite
-                     
-                    </Link>
-               </span>
+                href="https://www.ibiz.name.ng"
+                className="text-base sm:text-lg hover:text-blue-600 transition-colors duration-300"
+              >
+                iBiz Business Suite
+              </Link>
+            </span>
           </p>
         </div>
 
@@ -76,10 +71,22 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
             <p className="text-base sm:text-lg">
-              Email: <a href="mailto:info@jktechlimited.com" className="hover:text-purple-600 transition-colors duration-300">info@jktechlimited.com</a>
+              Email:{" "}
+              <a
+                href="mailto:info@jktl.com.ng"
+                className="hover:text-purple-600 transition-colors duration-300"
+              >
+                info@jktl.com.ng
+              </a>
             </p>
             <p className="text-base sm:text-lg">
-              Phone: <a href="tel:+2347036580994" className="hover:text-purple-600 transition-colors duration-300">+234 703 658 0994</a>
+              Phone:{" "}
+              <a
+                href="tel:+2347036580994"
+                className="hover:text-purple-600 transition-colors duration-300"
+              >
+                +234 703 658 0994
+              </a>
             </p>
           </div>
 
@@ -87,18 +94,30 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
             <div className="flex justify-center gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.href}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-purple-600 hover:scale-110 transition-all duration-300"
-                  aria-label={`Follow us on ${social.label}`}
-                >
-                  <social.icon className="w-6 h-6 sm:w-8 sm:h-8" />
-                </a>
-              ))}
+              <a
+                href="https://www.instagram.com/jktechlimited"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-purple-600 hover:scale-110 transition-all duration-300"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-6 h-6 sm:w-8 sm:h-8" />
+              </a>
+              <a
+                href="https://www.x.com/jktechlimited"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-all duration-300"
+                aria-label="Follow us on X"
+              >
+                <Image
+                  src="/logos/logo-white.png"
+                  alt="X Logo"
+                  width={32}
+                  height={32}
+                  className="w-6 h-6 sm:w-8 sm:h-8"
+                />
+              </a>
             </div>
           </div>
         </div>

@@ -1,17 +1,28 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Experience() {
   const milestones = [
-    { title: "Founded in 2020", description: "Began our journey to empower businesses." },
-    { title: "500+ Projects", description: "Delivered innovative solutions across industries." },
-    { title: "Trusted by 100+ Clients", description: "Serving Nigeria and Africa with excellence." },
+    {
+      title: "Founded in 2018",
+      description: "JKTL was created to empower businesses with innovative digital tools and productivity solutions.",
+    },
+    {
+      title: "Expert Team",
+      description: "Led by a UniCal Computer Science graduate, combining technical expertise with real-world business insights.",
+    },
+    {
+      title: "Delivering Impact",
+      description: "Building secure, scalable solutions like iBiz Business Suite to help companies operate smarter and grow faster.",
+    },
   ];
 
   return (
     <section
       id="experience"
       className="bg-gradient-to-r from-blue-900 to-purple-900 py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
-      aria-label="Our Experience"
+      aria-label="Our Journey and Achievements"
     >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/20"></div>
@@ -19,12 +30,11 @@ export default function Experience() {
       <div className="relative max-w-5xl mx-auto text-center animate-fade-in">
         {/* Section Header */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-          5+ Years of Excellence
+          Our Journey & Achievements
         </h2>
         <div className="w-24 h-1 bg-purple-600 mx-auto mb-6"></div>
         <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
-          Delivering cutting-edge software, marketing, and business solutions since our
-          inception. Trusted by clients across industries to provide growth-driven results.
+          Since 2018, JK TECHNOLOGY LIMITED has been creating <strong className="text-purple-600">innovative digital solutions</strong> that help businesses increase efficiency, streamline operations, and grow with confidence.
         </p>
 
         {/* Milestones Grid */}
@@ -38,6 +48,17 @@ export default function Experience() {
               <p className="text-sm text-white/80">{milestone.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="mt-8 md:mt-12">
+          <Link
+            href="https://ibiz.name.ng"
+            className="inline-block bg-purple-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-md font-semibold shadow-lg hover:bg-purple-700 transition-all duration-300 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+            aria-label="Try iBiz Business Suite free tools"
+          >
+            Try Free Tools
+          </Link>
         </div>
       </div>
     </section>
