@@ -33,27 +33,38 @@ export default function Welcome() {
         <div className="max-w-3xl mx-auto space-y-8 animate-fade-in-delay">
           {/* Vision */}
           <div>
-            <h3 className="text-2xl font-semibold text-purple-700 mb-3"> Vision</h3>
+            <h3 className="text-2xl font-semibold text-purple-700 mb-3">
+              {" "}
+              Vision
+            </h3>
             <p className="text-lg sm:text-xl text-gray-700 leading-relaxed italic">
-              "To lead humanity into a future so vast and unfathomable it feels like destiny — 
-              where technology becomes the unseen bridge between imagination and reality."
+              To lead humanity into a future so vast and unfathomable it feels
+              like destiny, where technology becomes the unseen bridge between
+              imagination and reality.
             </p>
           </div>
 
           {/* Mission */}
           <div>
-            <h3 className="text-2xl font-semibold text-purple-700 mb-3"> Mission</h3>
+            <h3 className="text-2xl font-semibold text-purple-700 mb-3">
+              {" "}
+              Mission
+            </h3>
             <p className="text-lg sm:text-xl text-gray-700 leading-relaxed italic">
-              "To design and deliver technologies that expand human possibility — guiding people 
-              and enterprises toward horizons they never thought possible, yet can touch with us."
+              To design and deliver technologies that expand human possibility,
+              guiding people and enterprises toward horizons they never thought
+              possible, yet can touch with us.
             </p>
           </div>
 
           {/* Motto */}
           <div>
-            <h3 className="text-2xl font-semibold text-purple-700 mb-3"> Motto</h3>
+            <h3 className="text-2xl font-semibold text-purple-700 mb-3">
+              {" "}
+              Motto
+            </h3>
             <p className="text-xl sm:text-2xl font-medium text-gray-900">
-              “Beyond belief. Within reach.”
+              Beyond belief. Within reach.
             </p>
           </div>
 

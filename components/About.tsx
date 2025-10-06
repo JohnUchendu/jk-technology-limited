@@ -63,7 +63,7 @@ export default function About() {
 
           {/* Achievements */}
           <p className="text-lg sm:text-xl text-gray-700 leading-relaxed animate-fade-in-delay-4">
-            Under John's leadership, JKTL has successfully delivered enterprise software solutions for corporate clients like <strong className="text-blue-900">K.K. Ubani & Co.</strong> and helped countless SMEs adopt digital workflows. Our tools are designed to save time, reduce errors, and accelerate business growth.
+            Under John&quots leadership, JKTL has successfully delivered enterprise software solutions for corporate clients like <strong className="text-blue-900">K.K. Ubani & Co.</strong> and helped countless SMEs adopt digital workflows. Our tools are designed to save time, reduce errors, and accelerate business growth.
           </p>
 
           {/* Future Focus */}
