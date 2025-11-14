@@ -1,127 +1,68 @@
-"use client";
-
-import Link from "next/link";
 import Image from "next/image";
-import { Instagram } from "lucide-react";
+import NewsletterSubscribe from "./SubscriptionNewsletter";
 
 export default function Footer() {
-  const navLinks = [
-    { href: "#welcome", label: "Welcome" },
-    { href: "#about", label: "About" },
-    { href: "#services", label: "What We Do" },
-    { href: "#clients", label: "Clients" },
-    { href: "#contact", label: "Contact" },
-  ];
-
   return (
-    <footer
-      className="bg-gradient-to-r from-blue-900 to-purple-900 py-12 md:py-16 px-4 sm:px-6 lg:px-8 relative text-white/90"
-      aria-label="Footer"
-    >
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black/20"></div>
-
-      <div className="relative max-w-6xl mx-auto animate-fade-in">
-        {/* Company Info */}
-        <div className="text-center mb-8">
-          <h3 className="text-2xl sm:text-3xl font-bold text-blue-200 mb-4">
-            JK TECHNOLOGY LIMITED
-          </h3>
-          <p className="text-base sm:text-lg">
-            &copy; 2025 JK TECHNOLOGY LIMITED. All Rights Reserved.
-          </p>
-          <p className="text-base sm:text-lg mt-2">
-            Powered by{" "}
-            <span className="text-blue-400 font-semibold">
-              <Link
-                href="https://www.ibiz.name.ng"
-                className="text-base sm:text-lg hover:text-blue-600 transition-colors duration-300"
-              >
-                iBiz Business Suite
-              </Link>
-            </span>
-          </p>
-        </div>
-
-        {/* Divider */}
-        <div className="w-24 h-1 bg-purple-600 mx-auto mb-8"></div>
-
-        {/* Navigation & Contact/Social */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          {/* Navigation Links */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
-            <nav>
-              <ul className="space-y-2">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-base sm:text-lg hover:text-purple-600 transition-colors duration-300"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
-            <p className="text-base sm:text-lg">
-              Email:{" "}
-              <a
-                href="mailto:info@jktl.com.ng"
-                className="hover:text-purple-600 transition-colors duration-300"
-              >
-                info@jktl.com.ng
-              </a>
+    <footer className="bg-gray-900 text-white py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="md:col-span-2">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                 <Image src="/logos/jktl-logo.png" width={100} height={100} alt='jktl logo'/>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold">JK Technology Limited</h3>
+                <p className="text-blue-200 text-sm"></p>
+              </div>
+            </div>
+            <p className="text-gray-300 mb-4 max-w-md">
+              A registered Nigerian company providing enterprise-grade web and software development 
+              solutions to businesses across Africa and beyond.
             </p>
-            <p className="text-base sm:text-lg">
-              Phone:{" "}
-              <a
-                href="tel:+2347036580994"
-                className="hover:text-purple-600 transition-colors duration-300"
-              >
-                +234 703 658 0994
-              </a>
-            </p>
-          </div>
-
-          {/* Social Media */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-            <div className="flex justify-center gap-4">
-              <a
-                href="https://www.instagram.com/jktechlimited"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-purple-600 hover:scale-110 transition-all duration-300"
-                aria-label="Follow us on Instagram"
-              >
-                <Instagram className="w-6 h-6 sm:w-8 sm:h-8" />
-              </a>
-              <a
-                href="https://www.x.com/jktechlimited"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:scale-110 transition-all duration-300"
-                aria-label="Follow us on X"
-              >
-                <Image
-                  src="/logos/logo-white.png"
-                  alt="X Logo"
-                  width={32}
-                  height={32}
-                  className="w-6 h-6 sm:w-8 sm:h-8"
-                />
-              </a>
+            <div className="flex items-center space-x-2 text-sm text-gray-400">
+              <span>✓ CAC Registered</span>
+              <span>•</span>
+              <span>✓ Trusted Partner</span>
+              <span>•</span>
+              <span>✓ Quality Guaranteed</span>
             </div>
           </div>
+
+
+<div className="md:col-span-2">
+ 
+  <NewsletterSubscribe />
+</div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Services</h4>
+            <ul className="space-y-2 text-gray-300">
+              <li><a href="services/web-development" className="hover:text-white">Web Development</a></li>
+              <li><a href="services/software-solutions" className="hover:text-white">Software Solutions</a></li>
+              {/* <li><a href="#" className="hover:text-white">E-commerce</a></li> */}
+              <li><a href="services/it-consulting" className="hover:text-white">IT Consulting</a></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            <ul className="space-y-2 text-gray-300">
+              <li>info@jktl.com.ng</li>
+              <li>+234 703 658 0994</li>
+              <li>Port Harcourt, Nigeria</li>
+              
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; {new Date().getFullYear()} JK Technology Limited. All rights reserved.</p>
         </div>
       </div>
     </footer>
-  );
+  )
 }

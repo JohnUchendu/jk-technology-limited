@@ -1,20 +1,31 @@
-"use client";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import AnnouncementBanner from '@/components/AnnoucementBanner'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
-import "./globals.css";
-import { ReactNode } from "react";
-import Navbar from "@/components/Navbar"; // Adjust path as needed
-import Footer from "@/components/Footer"; // Adjust path as needed
+const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export const metadata: Metadata = {
+  title: 'JKTL Labs - Trusted Web & Software Development Company',
+  description: 'RC-87373745 registered company. Transform your business with enterprise-grade web and software solutions. Boost credibility, efficiency, and growth.',
+  keywords: 'web development, software company, Nigeria, CAC registered, RC-87373745',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" dir="ltr" className="scroll-smooth">
-      <body
-        className="font-sans text-xs sm:text-lg text-gray-800 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 min-h-screen pt-24 md:pt-20"
-      >
-        <Navbar />
-        <main>{children}</main>
+    <html lang="en">
+      <body className={inter.className}>
+        <AnnouncementBanner />
+        <Header />
+        {children}
         <Footer />
       </body>
     </html>
-  );
+  )
 }

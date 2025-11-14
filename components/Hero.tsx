@@ -1,59 +1,111 @@
 
-"use client";
 
-import Link from "next/link";
-import Image from "next/image";
+
+"use client"
+
+
+import { Button } from '@/components/ui/button'
+import { Calendar, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-r from-blue-950 to-purple-900 text-white relative overflow-hidden">
-      {/* Overlay for depth */}
-      <div className="absolute inset-0 bg-black/30"></div>
+    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20 px-4">
+      <div className="max-w-6xl mx-auto text-center">
+       
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-12 py-24 lg:py-32 animate-fade-in">
-        {/* Left Side: Text */}
-        <div className="lg:w-1/2 text-center lg:text-left space-y-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-            Empower Your Business with iBiz Business Suite
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/90">
-            iBiz Business Suite provides free productivity tools and premium business solutions to help your company run smarter, faster, and easier. From QR codes and invoices to professional websites and business emails — everything your business needs, all in one platform.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-6">
-            <Link
-              href="https://ibiz.name.ng"
-              className="bg-white text-blue-950 px-6 py-3 sm:px-8 sm:py-4 rounded-md font-semibold shadow-lg hover:bg-purple-700 hover:text-white transition-all duration-300 ease-in-out"
-              aria-label="Try iBiz Business Suite free tools"
-            >
-              Try Free Tools
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          Enterprise-Grade Technology
+          <span className="text-blue-600 block">For Growing Businesses</span>
+        </h1>
+        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          As a registered Nigerian company, we understand local business challenges. 
+          We build reliable, scalable solutions that establish credibility and drive measurable growth.
+        </p>
+        
+        {/* Updated CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <Button 
+            asChild
+            size="lg" 
+            className="bg-blue-600 hover:bg-blue-700 shadow-lg"
+          >
+            <Link href="#portfolio">
+              View Our Work
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
-            <Link
-              href="https://ibiz.name.ng"
-              className="bg-transparent border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-md font-semibold hover:bg-purple-700 hover:border-purple-700 transition-all duration-300 ease-in-out"
-              aria-label="Explore premium iBiz Business Suite services"
-            >
-              Explore Premium Services
+          </Button>
+          <Button 
+            asChild
+            size="lg" 
+            variant="outline" 
+            className="border-blue-600 text-blue-600 hover:bg-blue-50"
+          >
+            <Link href="/contact">
+             Stop losing clients
             </Link>
-          </div>
+          </Button>
         </div>
 
-        {/* Right Side: iBiz Screenshot */}
-        <div className="lg:w-1/2 flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-lg shadow-xl rounded-xl overflow-hidden">
-            <Image
-              src="/ibizsc.png" // replace with your actual screenshot path
-              alt="iBiz Business Suite Dashboard"
-              width={800}
-              height={500}
-              className="w-full h-auto object-cover"
-              priority
-            />
-            <span className="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-              Free & Premium Tools
-            </span>
+        {/* Urgent CTA Section */}
+        <div className="bg-white rounded-2xl p-8 shadow-lg border border-orange-200 max-w-2xl mx-auto mb-12">
+          <div className="flex items-center justify-center space-x-2 text-orange-600 mb-4">
+            <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+            <span className="font-semibold">LIMITED TIME OFFER</span>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Book Your Free Consultation Before December 15th
+          </h3>
+          <p className="text-gray-600 mb-6">
+             <strong className="text-green-600">Limited spots</strong> + 
+            <strong className="text-green-600"> free 3-month support</strong> when you book now
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg" 
+              className="bg-orange-500 hover:bg-orange-600 text-white shadow-lg font-semibold text-lg py-6"
+              ><Link href="/contact">
+              <Calendar className="w-5 h-5 mr-2" />
+              Book Free Strategy Session
+              
+              </Link>
+              
+            </Button>
+            {/* <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-green-600 text-green-600 hover:bg-green-50 font-semibold py-6"
+              onClick={() => window.open('https://wa.me/234XXXXXXXXX', '_blank')}
+            >
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Quick WhatsApp Chat
+            </Button> */}
+          </div>
+          <p className="text-sm text-gray-500 mt-4">
+            ⚡ Usually responds in under 5 minutes
+          </p>
+        </div>
+
+        {/* Social Proof & Stats */}
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-blue-600">47%</div>
+            <div className="text-sm text-gray-600">Avg. Revenue Increase</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-green-600">24/7</div>
+            <div className="text-sm text-gray-600">Dedicated Support</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-purple-600">RC-8754824</div>
+            <div className="text-sm text-gray-600">CAC Registered</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-orange-600">97.99%</div>
+            <div className="text-sm text-gray-600">Client Satisfaction</div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
