@@ -4,6 +4,9 @@ import './globals.css'
 import AnnouncementBanner from '@/components/AnnoucementBanner'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Script from 'next/script'
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,6 +27,10 @@ export default function RootLayout({
         <AnnouncementBanner />
         <Header />
         {children}
+        <Script
+          src="https://js.paystack.co/v1/inline.js"
+          strategy="lazyOnload"
+        />
         <Footer />
       </body>
     </html>
